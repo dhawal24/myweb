@@ -1,0 +1,112 @@
+If you’re a WordPress developer and planning to develop a wordpress plugin, then there are some important points to checkout before you release your plugin to public.
+
+I have been working on Wordpress from long time and create some themes/ plugins for number of clients as per their requirement. Throughout this experience, I’ve learned many lessons, and would like to share them with you in this article.
+
+Plan Your Plugin
+-------------------------------------------
+Yes, this is your step number one to plan your plugin. Try this checklist:
+  
+  --- Will your plugin impact your theme or other plugins?
+  --- Does your plugin required extra database tables in MySql?
+  --- Can you afford the time to offer support to users?
+  --- Have similar plugins already been written? Check the Wordpress Plugin Repository.
+
+These questions are important because they impact on how seriously you need to take issues such as coding standards, updates, security, support and documentation. Even if you're just writing a plugin for your own use or for the use of your colleagues, you need to think hard about how you're going to go about it so that you don't make a rod for your own back.
+
+
+Using the Right Hooks
+-------------------------------------------
+Hooks are the bridge between your plugin and the WordPress. You can’t write plugins without hooks. You’d be surprised how many plugins misuse them though. Depending on the scope of your plugin, you should consider adding your own custom hooks for future developers to extend your plugin.
+
+The first step to the proper use of hooks lies simply in taking the proper time to read through the official documentation of the Hooks Plugin API.
+
+
+Name Plugin Files Uniquely
+-------------------------------------------
+Number two is prefixing, as you are a developer you must be knowing what is prefixing. You should make sure that your classes or functions must share a common prefix throughout the plugin because:
+
+  --- Your functions are readily identifiable as being part of your plugin.
+  ---  Unique function names reduces the chance of conflicts with other existing functions.
+
+What, I meant by this is that, if your plugin have a function with common name like get_posts, which may already exist in Wordpress theme or other plugin to have installed. Due to this, your website can crash or not work as required.
+
+So, what I have learned this, it's better to use and prefix like an abbreviation of plugin or something related to it for things like Class names, function Names, constants or any other declarations which can conflict with Wordpress theme or other plugins.
+
+Take Security Seriously
+-------------------------------------------
+Making your plugin secure is the single most important step to take and you should NOT overlook it, or take it lightly, but many developers discount security or relegate it to the status of an afterthought. Don't make that mistake.
+
+Sanitize inputs, escape outputs
+You should especially make yourself familiar with built in functions of Wordpress:
+
+  --- esc_url
+  --- esc_url_raw
+  --- wp_filter_kses
+  --- esc_attr
+  --- esc_html
+  --- esc_textarea
+
+Also, when validating user inputs, run these PHP filters:
+
+  --- FILTER_VALIDATE_EMAIL
+  --- FILTER_VALIDATE_URL
+
+Load Only What You Need
+-------------------------------------------
+This means load only the required stylesheets, javascript and other scripts that are needed for that page or section of the site. At the very least, don't load admin scripts on the front-end & vice versa.
+
+if(is_admin()){   
+  //load my plugin stuff for the admin pages
+   
+}else{ 
+  //load my plugin stuff for the frontend   
+}
+
+
+This will reduce the load of the page and can also reduce the chance of conflict's.
+
+
+Turn on debug
+-------------------------------------------
+There is build-in debugger in Wordpress, which will help you to find out any errors or warning in development phase. When creating your plugin, have WordPress Debugging turned on. To do so, insert this code into your plugin:
+
+define('WP_DEBUG', TRUE);
+
+Releasing a plugin that’s spitting our warnings or errors when a developer is debugging their own theme or plugin is a great way to get your plugin deleted.
+
+
+Don't use deprecated functions!
+-------------------------------------------
+As you are aware that Wordpress is ever updating, while they update their core files, some functions gets deprecated or replaced. So as a result, there are outdated functions that while still supported for current versions may not be in future releases. 
+
+You may have used code from an old tutorial. Look it up in the Wordpress codex to see if it is marked as deprecated. There will be a link to the newer function.
+
+
+Test Your Plugins Thoroughly
+-------------------------------------------
+The last but not the least part of any good software development cycle is polishing and testing the product for release.
+
+Here are my suggestions for when you are getting ready to deploy the initial release of your plugin, or are preparing a version release:
+
+  --- Debug your plugin with wp_debug enabled until everything is resolved.
+  --- Test the plugin on a fresh WordPress install.
+  --- Test the plugin using multiple WordPress themes.
+  --- Consider testing the plugin on old WordPress versions and PHP versions that you suspect might affect the functionality of the plugin.
+  ---  Analyze and test your plugin with browser developer tools (DevTools for Chrome, Firebug for Firefox, etc.).
+  ---  Compress all front-end files (HTML, CSS, and images). Include non-minified versions of your stylesheets and HTML files so that the plugin user can perform custom modifications.
+  --- Write good documentation. Documenter can be helpful with this process.
+
+Activation and Deactivation Actions
+-------------------------------------------
+When you activate a plugin, you will see a deactivate link appear in the plugins admin page. But deactivating only stops the plugin from functioning. After deactivation, you then get a delete link. The delete link is the key to tidying up after yourself. It should really be called uninstall.
+
+Often overlooked are these two functions:
+
+	register_activation_hook(__FILE__, 'my_plugin_activation'));
+	register_deactivation_hook(__FILE__, 'my_plugin_deactivation'));
+	function my_plugin_activation() {
+		// Initialize some stuff for my_plugin
+	}
+	function my_plugin_deactivation() {
+		// Welp, I've been deactivated - are there some things I should clean up?
+	}
