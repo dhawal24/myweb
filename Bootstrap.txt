@@ -1,0 +1,93 @@
+Hey Youtube, How it's going.??
+
+Welcome to Learners Aide Video !! 
+
+Before we get started, we actually to say one last thing and that is to follow along with this tutorial, you need to have a basic knowledge of HTML& CSS.
+
+This is the first tutorial of Bootstrap. In this tutorial we will discuss:
+
+1) What is Bootstrap
+2) Advantages of using Bootstrap
+
+1) What is Bootstrap?
+
+Bootstrap is a free, open-source and is the most popular HTML, CSS, and JavaScript framework developed by Twitter for creating a responsive and mobile-friendly 
+
+website.  
+
+It includes HTML and CSS based design templates for common user interface components like Typography, Forms, Buttons, Tables, Navigations, Dropdowns, Alerts, 
+
+Modals, Tabs, Accordion, Carousel and many other as well as optional JavaScript extensions.
+
+Bootstrap can use it with any web application built with any server-side technology like ASP.NET, JAVA, PHP etc.
+
+
+2) Advantages of using Bootstrap
+
+  - Supports responsive design
+  - Saves a lot of development time
+  - Consistency
+  - Customizable
+  - Support
+
+
+In our next video, we will discuss, downloading, setting up and understanding different bootstrap components.  
+
+Thank you for listening and have a great day.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Installing bootstrap locally
+
+Welcome to Learners Aide Video !! 
+
+This is part two of Bootstrap tutorial, in this video we will discuss how to download & install bootstrap to your local machine.
+
+It is very easy to setup and start using Bootstrap. This video will explain how to download and setup Bootstrap. We will also discuss the Bootstrap file structure, and 
+
+demonstrate its usage with an example.
+
+You can download the latest version of Bootstrap from http://getbootstrap.com/. This website also has all the documentation you need to get started with bootstrap.
+
+Here you can see two button
+   -- Download Bootstrap − Clicking this, you can download the precompiled and minified versions of Bootstrap CSS, JavaScript, and fonts. No documentation or original 
+
+source code files are included.
+
+   -- Download Source − Clicking this, you can get the latest Bootstrap LESS and JavaScript source code directly from GitHub.
+
+For better understanding and ease of use, we have downloaded and use a precompiled version of Bootstrap throughout the tutorial. Once the compiled version Bootstrap is 
+
+downloaded, extract the ZIP file, and you will see the following file/directory structure
+
+For this course, I am going to use Visual Code as the editor. You can use any editor of your choice.
+
+Here are the steps to create your first web page with Bootstrap:
+
+  -- Create a new blank html file and save that file naming boostrap-tutorial.html
+  -- To use bootstrap in your website, copy the folder that contains 3 sub-folders (css, fonts, & js) in your website project folder.
+  -- There is a basic template available at the following link. Copy and paste the template code in index.html
+       http://getbootstrap.com/getting-started/#template
+
+Here you can see the jquery.js, bootstrap.min.js and bootstrap.min.css files that are included to make a normal HTM file to the Bootstrapped Template. Just make sure to include jQuery library before you include Bootstrap library.
+
+You congratulation for making your first page using bootstrap.
+
+In our next video, we will discuss, Bootstrap Grid System.  
+
+Thank you for listening and have a great day.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Bootstrap Grid System
+
+Welcome to Learners Aide Video !! 
+
+In this video we will discuss, How to create page layouts using bootstrap grid system. 
+
+One of the very important concept that we need to understand in Bootstrap is it's Grid System. Grid systems are used for creating page layouts through a series of rows and columns that house your content. The Grid System consists of 12 columns.
+
+Let us now  create a 3 column layout using the Bootstrap Grid System. The 3 column layout should be as shown below.  
+
+As per the image show the page should be divided into 3 columns, one important thing to keep into mind is that, the sum should be equal to 12, because the bootstrap grid system consists of 12 columns.
+
