@@ -84,3 +84,11 @@ var employeeAttendance = [
 	}, 
 ]
 
+var employee = prompt("Please Employee Id", "");
+
+if (employee == null || employee == "") {
+	console.log("Please add employee Id");
+}else{
+
+	console.log
+}
