@@ -89,6 +89,15 @@ var employee = prompt("Please Employee Id", "");
 if (employee == null || employee == "") {
 	console.log("Please add employee Id");
 }else{
+	var emp = getEmployeeData(employee);
+	console.log(emp);
+}
 
-	console.log
+
+function getEmployeeData(empId){
+	for(var i = 0; i < employeeData.length; i++) {
+		if(employeeData[i].id == empId){
+			return employeeData[i];
+		}
+	}
 }
