@@ -1,0 +1,110 @@
+// Destructuring
+
+var employees = [
+ {
+   "firstName": "Apollo",
+   "lastName": "Creed",
+   "age": 32
+ },
+ {
+   "firstName": "Divya",
+   "lastName": "Mantri",
+   "age": 33
+ },
+ {
+   "firstName": "Durvesh",
+   "lastName": "Naik",
+   "age": 34
+ },
+ {
+   "firstName": "Roshni",
+   "lastName": "Pillai",
+   "age": 35
+ },
+ {
+   "firstName": "Apurva",
+   "lastName": "Parkhi",
+   "age": 36
+ }
+]
+
+var employeeNames = [];
+for(var i = 0; i < employees.length; i++) {
+ var { firstName, lastName } = employees[i];
+ employeeNames.push({firstName, lastName});
+}
+
+// Returning multiple values from a function + Destructuring using a function
+function getEmployee(firstName) {
+	for(var i = 0; i < employees.length; i++) {
+		if(employees[i].firstName == firstName)
+			return employees[i];
+    }
+}
+
+var { lastName, age } = getEmployee("Durvesh");
+
+// Default Arguments
+
+function sumThree(x = 0, y = 0, z = 0) {
+	return x + y + z;
+}
+
+sumThree(1, 1);
+sumThree(undefined, 1, 1);
+
+// Using arguments array
+function sumAll() {
+	for(var i = 0, result = 0; i < arguments.length; i++) {
+		result = result + arguments[i];
+    }
+	return result;
+}
+
+sumAll(1, 2);
+sumAll(1, 2, 3);
+sumAll(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+// REST parameters Example 1
+function sumAll(...numbers) {
+	for(var i = 0, result = 0; i < numbers.length; i++) {
+		result = result + numbers[i];
+    }
+	return result;
+}
+sumAll(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+// REST parameters Example 2
+function sum(...numbers) {
+ var result = 0;
+ for(var i = 0; i < numbers.length; i++) {
+  result = result + numbers[i];
+ }
+ return result;
+}
+
+function multiply(...numbers) {
+ var result = 1;
+ for(var i = 0; i < numbers.length; i++) {
+  result = result * numbers[i];
+ }
+ return result;
+}
+
+function hash(...data) {
+ var summation = sum(...data);
+ var product = multiply(...data);
+ return summation + product;
+}
+hash(1, 2, 3);
+
+// String interpolation & Multiline strings
+var firstName = "ABC";
+var lastName = "DEF";
+var age = 32;
+var contact = 012345;
+var message = `Name = ${firstName}, ${lastName};
+Age = ${age};
+Contact = ${contact};
+`;
+console.log(message);
