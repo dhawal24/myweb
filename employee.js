@@ -47,7 +47,6 @@ var employeeData = [
 	
 ]
 
-
 var employeeAttendance = [
 	{
 		id : 1, employeeId : 4, Mon : 9, Tue : 9, Wed : 9, Thu : 9, Fri : 9, createdDate : "13-Aug-2018"
@@ -80,17 +79,54 @@ var employeeAttendance = [
 		id : 10, employeeId : 1, Mon : 10, Tue : 9, Wed : 6, Thu : 6, Fri : 8, createdDate : "13-Aug-2018"
 	}, 
 	{
-		id : 11, employeeId : 10, Mon : 7.5, Tue : 2, Wed : 9, Thu : 10, Fri : 7.5, createdDate : "13-Aug-2018"
+		id : 11, employeeId : 5, Mon : 7.5, Tue : 2, Wed : 9, Thu : 10, Fri : 7.5, createdDate : "13-Aug-2018"
 	}, 
 ]
 
-var employee = prompt("Please Employee Id", "");
+var employee = prompt("Please Employee Id");
 
 if (employee == null || employee == "") {
 	console.log("Please add employee Id");
 }else{
-	var emp = getEmployeeData(employee);
-	console.log(emp);
+	var empData = getEmployeeData(employee);
+
+	if(empData != null){
+		var empType = getEmployeeType(empData.type);
+		var empSalary = getEmployeeSalary(employee);
+	
+		actualHrs = 45;
+		hrsCal =  empSalary;
+		
+		if(hrsCal > actualHrs){
+			overTimeHrs = hrsCal - actualHrs;
+			basicHrs = hrsCal - overTimeHrs;
+		}else{
+			overTimeHrs = 0;
+			basicHrs = hrsCal - overTimeHrs;
+		}
+
+		overTimeAmt = overTimeHrs * empType.overTime;
+		basicTotal = basicHrs * empType.basicSalary;
+		totalPayOur = basicTotal + overTimeAmt + empType.HRA + empType.LTA;
+
+		var empResult = `Employee Id: ${employee}
+Employee Name: ${empData.firstName} ${empData.lastName} 
+Employee Type: ${empType.employeeType}
+Total Hours: ${empSalary}
+Basic Salary: ${empType.basicSalary}
+Basic Salary Payable: ${basicTotal}
+Overtime Hours: ${overTimeHrs}
+Overtime: ${empType.overTime}
+Overtime Payable: ${overTimeAmt}
+HRA: ${empType.HRA}
+LTA: ${empType.LTA}
+Total Salary Payable: ${totalPayOur}`;
+
+		console.log(empResult);
+}else{
+	console.log("No such employee Id exist");
+}
+
 }
 
 
@@ -100,4 +136,30 @@ function getEmployeeData(empId){
 			return employeeData[i];
 		}
 	}
+}
+
+
+function getEmployeeType(emptId){
+	for(var i = 0; i < employeeType.length; i++){
+		if(employeeType[i].id == emptId){
+			return employeeType[i];
+		}
+	}
+}
+
+function getEmployeeSalary(empId){
+	for(var i = 0; i < employeeAttendance.length; i++){
+		if(employeeAttendance[i].employeeId == empId){
+			var hours = sumHrs(employeeAttendance[i].Mon, employeeAttendance[i].Tue, employeeAttendance[i].Wed, employeeAttendance[i].Thu, employeeAttendance[i].Fri);
+			return hours;
+		}
+	}
+}
+
+function sumHrs(...numbers){
+	var result = 0;
+ 	for(var i = 0; i < numbers.length; i++) {
+  		result = result + numbers[i];
+ 	}
+ 	return result;
 }
