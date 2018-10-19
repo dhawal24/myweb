@@ -10,3 +10,7 @@ The pending list are:
     - Testing the URL's
 
     - Checking the mobile website
+
+
+We can complete this by next week.
+   
