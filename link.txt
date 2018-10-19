@@ -1,4 +1,12 @@
-https://ld-wp.template-help.com/woocommerce_64146_v1/
-http://www.webstrot.com/html/tm/healthshop/02_Organic_Store/index.html
-https://theme150-drugs.myshopify.com/
-https://livedemo00.template-help.com/prestashop_49469/
+Hi Pritesh Sir,
+
+We have successfully shifted the database to bluehost.in & that is reflecting on website www.gb.educationprograms.in. All the pages are showing now on the website.
+
+The pending list are:
+
+
+    - Restructing of some pages which are messed up due to current website design.
+
+    - Testing the URL's
+
+    - Checking the mobile website
