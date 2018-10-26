@@ -1,16 +1,4 @@
-Hi Pritesh Sir,
-
-We have successfully shifted the database to bluehost.in & that is reflecting on website www.gb.educationprograms.in. All the pages are showing now on the website.
-
-The pending list are:
+https://codepen.io/Imperative/pen/qaskf
 
 
-    - Restructing of some pages which are messed up due to current website design.
-
-    - Testing the URL's
-
-    - Checking the mobile website
-
-
-We can complete this by next week.
-   
+https://www.templatemonster.com/help/superfish-dropdown-menu.html
