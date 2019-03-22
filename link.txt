@@ -1,4 +1,5 @@
-https://codepen.io/Imperative/pen/qaskf
+https://codinginfinite.com/crud-operations-php-mysql-tutorials-source-code/
 
+https://codinginfinite.com/restful-web-services-php-example-php-mysql-source-code/
 
-https://www.templatemonster.com/help/superfish-dropdown-menu.html
+https://www.codeofaninja.com/2017/02/create-simple-rest-api-in-php.html
