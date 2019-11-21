@@ -37,3 +37,5 @@ https://www.seattlewebdesign.com/portfolio/project/viva-doria
 https://www.amberweinberg.com/portfolio/
 
 http://www.toby-powell.com/case-studies/vogue-thailand-website
+
+https://www.codingame.com/playgrounds/9087/integrate-admin-template-in-reactjs
